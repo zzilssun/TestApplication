@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.list_item_repo.view.*
 class RepoAdater : RecyclerView.Adapter<RepoAdater.ViewHolder>() {
     private val items = ArrayList<RepoModel>()
 
-    fun putItems(items: ArrayList<RepoModel>) {
+    fun putItems(items: List<RepoModel>) {
         val positionStart = this.items.size
         val itemCount = items.size
         this.items.addAll(items)

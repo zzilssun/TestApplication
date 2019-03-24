@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.zzilssun.testapplication.adaters.RepoAdater
 import com.zzilssun.testapplication.api.APIController
+import com.zzilssun.testapplication.models.RepoModel
 import kotlinx.android.synthetic.main.activity_repo.*
 
 class RepoActivity : AppCompatActivity() {
@@ -28,7 +29,7 @@ class RepoActivity : AppCompatActivity() {
 
         APIController.instance.requestUserRepo(userName).subscribe { items ->
             (recycler_view.adapter as? RepoAdater)?.let {
-                it.putItems(items)
+                it.putItems(items.sortedWith(compareByDescending { it.stargazers_count }))
             }
         }
     }
