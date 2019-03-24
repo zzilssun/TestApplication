@@ -2,13 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.zzilssun.testapplication">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
             android:name=".AnalyticsApplication"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
+            android:largeHeap="true"
+            android:usesCleartextTraffic="true"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
@@ -28,11 +30,10 @@
                 <category android:name="android.intent.category.BROWSABLE"/>
 
                 <data
-                        android:host="testapp"
-                        android:scheme="repos"/>
+                    android:host="repo"
+                    android:scheme="testapp"/>
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

@@ -9,5 +9,4 @@ class AnalyticsApplication : Application() {
         super.attachBaseContext(base)
         MultiDex.install(this)
     }
-
 }
